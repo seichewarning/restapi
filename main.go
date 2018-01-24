@@ -3,12 +3,12 @@ package main
 import (
 	"errors"
 	"fmt"
-	"github.com/sogko/slumber-sessions"
-	"github.com/sogko/slumber-users"
-	"github.com/sogko/slumber/middlewares/context"
-	"github.com/sogko/slumber/middlewares/mongodb"
-	"github.com/sogko/slumber/middlewares/renderer"
-	"github.com/sogko/slumber/server"
+	"github.com/seichewarning/restapi/middlewares/context"
+	"github.com/seichewarning/restapi/middlewares/mongodb"
+	"github.com/seichewarning/restapi/middlewares/renderer"
+	"github.com/seichewarning/restapi/server"
+	"github.com/seichewarning/restapi/sessions"
+	"github.com/seichewarning/restapi/users"
 	"io/ioutil"
 	"time"
 )
@@ -28,13 +28,16 @@ func main() {
 
 	// create current project context
 	ctx := context.New()
+	fmt.Println("here!!!")
 
 	// set up DB session
 	db := mongodb.New(&mongodb.Options{
 		ServerName:   "localhost",
 		DatabaseName: "test-go-app",
 	})
+	fmt.Println("here!!!")
 	_ = db.NewSession()
+	fmt.Println("here!!!")
 
 	// set up Renderer (unrolled_render)
 	renderer := renderer.New(&renderer.Options{
@@ -76,6 +79,6 @@ func main() {
 
 	// bam!
 	s.Run(":3001", server.Options{
-		Timeout: 10*time.Second,
+		Timeout: 10 * time.Second,
 	})
 }

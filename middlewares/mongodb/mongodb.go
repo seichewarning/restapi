@@ -1,13 +1,13 @@
 package mongodb
 
 import (
-	"github.com/sogko/slumber/domain"
+	"github.com/seichewarning/restapi/domain"
 	"gopkg.in/mgo.v2"
 	"net/http"
 	"time"
 )
 
-const MongoDbKey domain.ContextKey = "slumber-mddlwr-mongodb-key"
+const MongoDbKey domain.ContextKey = "restapi-mddlwr-restapi-key"
 
 type Options struct {
 	ServerName   string

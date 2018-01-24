@@ -5,12 +5,12 @@ import (
 
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
-	"github.com/sogko/slumber-sessions"
-	"github.com/sogko/slumber-users"
-	"github.com/sogko/slumber/domain"
-	"github.com/sogko/slumber/middlewares/context"
-	"github.com/sogko/slumber/middlewares/renderer"
-	"github.com/sogko/slumber/test_helpers"
+	"github.com/seichewarning/restapi/domain"
+	"github.com/seichewarning/restapi/middlewares/context"
+	"github.com/seichewarning/restapi/middlewares/renderer"
+	"github.com/seichewarning/restapi/sessions"
+	"github.com/seichewarning/restapi/test_helpers"
+	"github.com/seichewarning/restapi/users"
 	"gopkg.in/mgo.v2/bson"
 )
 

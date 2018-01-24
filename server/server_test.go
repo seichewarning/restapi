@@ -5,12 +5,12 @@ import (
 	"fmt"
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
-	"github.com/sogko/slumber-sessions"
-	"github.com/sogko/slumber-users"
-	"github.com/sogko/slumber/middlewares/context"
-	"github.com/sogko/slumber/middlewares/mongodb"
-	"github.com/sogko/slumber/middlewares/renderer"
-	"github.com/sogko/slumber/server"
+	"github.com/seichewarning/restapi/middlewares/context"
+	"github.com/seichewarning/restapi/middlewares/mongodb"
+	"github.com/seichewarning/restapi/middlewares/renderer"
+	"github.com/seichewarning/restapi/server"
+	"github.com/seichewarning/restapi/sessions"
+	"github.com/seichewarning/restapi/users"
 	"io/ioutil"
 	"net/http"
 	"net/http/httptest"
@@ -81,7 +81,7 @@ var _ = Describe("Server", func() {
 		It("should serve request", func() {
 			// run server and it shouldn't panic
 			go s.Run(":8001", server.Options{
-				Timeout: 1*time.Millisecond,
+				Timeout: 1 * time.Millisecond,
 			})
 			time.Sleep(100 * time.Millisecond)
 

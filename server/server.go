@@ -3,7 +3,7 @@ package server
 import (
 	"github.com/codegangsta/negroni"
 	"github.com/gorilla/context"
-	"github.com/sogko/slumber/domain"
+	"github.com/seichewarning/restapi/domain"
 	"gopkg.in/tylerb/graceful.v1"
 	"net/http"
 	"time"
@@ -28,7 +28,7 @@ type Config struct {
 
 // Options for running the server
 type Options struct {
-	Timeout time.Duration
+	Timeout         time.Duration
 	ShutdownHandler func()
 }
 

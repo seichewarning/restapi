@@ -3,8 +3,8 @@ package domain_test
 import (
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
-	"github.com/sogko/slumber/domain"
-	"github.com/sogko/slumber/middlewares/context"
+	"github.com/seichewarning/restapi/domain"
+	"github.com/seichewarning/restapi/middlewares/context"
 	"net/http"
 	"net/http/httptest"
 )
